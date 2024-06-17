@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
 
   // setting the hints addrinfo
   memset(&hints, 0, sizeof(struct addrinfo));
-  hints.ai_family = AF_INET;       // 32-bit IP
+  hints.ai_family = AF_UNSPEC;					// both IPv4 and v6 allowed 
   hints.ai_socktype = SOCK_STREAM; //
 
   int error = getaddrinfo(argv[1], 0, &hints, &res);
