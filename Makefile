@@ -8,4 +8,4 @@ server_socket.o :
 	gcc -c server/server_socket.c 
 
 clean:
-	rm getaddrinfo
+	rm main *.o
