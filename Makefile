@@ -1,11 +1,11 @@
-client_socket:
-	gcc client/client_socket.c -o client_socket
+main : client_main.c client_socket.o server_socket.o
+	gcc -o main client_main.c client_socket.o server_socket.o
 
-server_socket :
-	gcc server/server_socket.c - o server_socket
+client_socket.o :
+	gcc -c client/client_socket.c
 
-main : client_socket server_socket
-	gcc client_main.c -o main
+server_socket.o : 
+	gcc -c server/server_socket.c 
 
 clean:
 	rm getaddrinfo
