@@ -1,8 +1,8 @@
-#include <netdb.h>
-#include <string.h>
-#include <sys/socket.h>
+#include <netdb.h>		// addrinfo
+#include <string.h>		// memset
+#include <sys/socket.h>	// addrinfo, socket, connect
 #include <sys/types.h>
-#include <unistd.h>
+#include <unistd.h>		// close
 
 int open_clientfd(char *hostname, char *port) {
   // hints is an addrinfo filtering possible result addrinfos
@@ -11,7 +11,6 @@ int open_clientfd(char *hostname, char *port) {
   // socket() and connect() will try all entries in list untill a connection is
   // established
   struct addrinfo hints, *res, *iter;
-  int getaddrstatus;
   int clientfd;
 
   // setting the hints addrinfo
