@@ -14,15 +14,18 @@ The source files related to the server side are:
 ## Build / Compile / Run
 Run Make in the repo. This creates object files and two executables: server_main and client_main 
 Firstly run the server_main with a listening port as input:
-'''console
+```console
 ./server_main 1234
-'''
+```
 In another shell, simultaneously run client_main with an IP and port:
-'''console
+```console
 ./server_main 127.0.0.1 1234
-'''
+```
 
 The client should now connect to the server, and the client can type input and the server will echo it back.
 
-## Other
-Also testing using git from the terminal and my new NeoVim setup
+## Resources / Other
+[Beej's Guide to Network Programming](https://beej.us/guide/bgnet/)
+Chapter 11 in Computer Systems: A Programmer's Perspective by Randal E. Bryant and David R. O’Hallaron
+
+Also, in this repo, I test using git from the terminal and my new NeoVim setup
