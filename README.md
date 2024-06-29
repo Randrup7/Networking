@@ -25,7 +25,7 @@ In another shell, simultaneously run client_main with an IP and port:
 The client should now connect to the server, and the client can type input and the server will echo it back.
 
 ## Resources / Other
-[Beej's Guide to Network Programming](https://beej.us/guide/bgnet/)
-Chapter 11 in Computer Systems: A Programmer's Perspective by Randal E. Bryant and David R. O’Hallaron
+- [Beej's Guide to Network Programming](https://beej.us/guide/bgnet/)
+- Chapter 11 in Computer Systems: A Programmer's Perspective by Randal E. Bryant and David R. O’Hallaron
 
 Also, in this repo, I test using git from the terminal and my new NeoVim setup
