@@ -27,5 +27,6 @@ The client should now connect to the server, and the client can type input and t
 ## Resources / Other
 - [Beej's Guide to Network Programming](https://beej.us/guide/bgnet/)
 - Chapter 11 in Computer Systems: A Programmer's Perspective by Randal E. Bryant and David R. O’Hallaron
+- [CS631 Systems Programming. Youtube playlist by Chris Kanich](https://www.youtube.com/playlist?list=PLhy9gU5W1fvUND_5mdpbNVHC1WCIaABbP)
 
 Also, in this repo, I test using git from the terminal and my new NeoVim setup
