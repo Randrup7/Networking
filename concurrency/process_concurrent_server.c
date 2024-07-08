@@ -1,5 +1,5 @@
-#include "server/server_socket.h"
-#include "server/echo.h"
+#include "../server/echo.h"
+#include "../server/server_socket.h"
 
 #include <netdb.h>
 #include <stdio.h>
@@ -8,6 +8,13 @@
 #include <unistd.h>
 
 #define MAXLINE 2000
+
+// This signal child handler 
+void sig_chld_handler(int sig)
+{
+	while (waitpid(-1, 0, WNOHANG) > 0);
+	return;
+}
 
 int main(int argc, char *argv[]) {
 
@@ -36,7 +43,7 @@ int main(int argc, char *argv[]) {
 
   while (1) {
 
-		puts("Listening for incoming connections...\n");
+    puts("Listening for incoming connections...\n");
     // Accept incoming connection and place client sockaddr in clientaddr
     conn_fd = accept(listen_fd, (struct sockaddr *)&clientaddr, &clientlen);
 
@@ -46,9 +53,14 @@ int main(int argc, char *argv[]) {
 
     printf("Connected to (%s, %s)\n", client_hostname, client_port);
 
-		echo(conn_fd);
+    if (fork() == 0) {
+			close(listen_fd); // Close as this process is not listening
+      echo(conn_fd);
+			close(conn_fd);
+			exit(0); // Exit this process
+    }
 
-		puts("Closing connection");
+    //puts("Closing connection");
     close(conn_fd);
   }
 
